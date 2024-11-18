@@ -1,0 +1,67 @@
+<!-- templates/voting_page.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting Page</title>
+    <link rel="stylesheet" type="text/css" href="/static/styles/voting_page.css">
+</head>
+<body>
+    <div class="col-sm-12" id="vtrmain" style="padding-top: 20px;">
+        <div class="container mt-5" id="vtrname" style="text-align: left;">
+            <!-- Voter Details Section -->
+            <div class="row">
+                <div class="col-md-4" id="vtrimg">
+                    <!-- Voter Image -->
+                    <img src="{{ url_for('static', filename='images/' + voter[4].split('/')[-1]) }}" 
+                         alt="Voter Photo" class="img-fluid rounded-circle" style="width: 100px; height: 100px;"/>
+                </div>
+                <div class="col-md-8" id="vtrdtls">
+                    <h1>Welcome, {{ voter[1] }}</h1> <!-- Display voter name -->
+                    <p><strong>Voter ID:</strong> {{ voter[2] }}</p> <!-- Voter ID -->
+                    <p><strong>Address:</strong> {{ voter[3] }}</p> <!-- Voter Address -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Candidate Details Section -->
+    <div class="card mt-4" style="width: 100%; padding: 20px;" id="candidtls">
+        <div class="card-body">
+            <h2 class="card-title text-center" id="cdnttl" style="color: #ffffff;">Vote for a Candidate</h2>
+            <form method="POST">
+                <div class="candidate-list d-flex justify-content-start flex-wrap" id="candlst">
+                    {% for candidate in candidates %}
+                        <div class="candidate-item" style="text-align: center; width: 22%; margin: 10px;">
+                            <div class="candidate-info">
+                                <!-- Candidate Number and Party Name -->
+                                <h3>{{ loop.index }} - {{ candidate[2] }}</h3>
+                                <!-- Candidate Logo -->
+                                <img src="{{ url_for('static', filename='images/' + candidate[3].split('/')[-1]) }}" 
+                                     alt="Candidate Logo" style="width: 100px; height: 100px; object-fit: cover;"/>
+                            </div>
+                            <!-- Vote Button -->
+                            <button type="submit" name="candidate_id" value="{{ candidate[0] }}" class="btn btn-success mt-2">Vote</button>
+                            <br>
+                            <a href="#" class="view-details" style="color: #007bff;">View Details</a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    
+    <!-- Flash messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul>
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!-- templates/admin_results.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting Results</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/admin_results.css') }}">
+</head>
+<body>
+    <h1>Voting Results</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Candidate Name</th>
+                <th>Party Name</th>
+                <th>Vote Count</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for result in results %}
+            <tr>
+                <td>{{ result[0] }}</td> <!-- Leader Name -->
+                <td>{{ result[1] }}</td> <!-- Party Name -->
+                <td>{{ result[2] }}</td> <!-- Vote Count -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('admin') }}">Back to Admin</a>
+</body>
+</html>
