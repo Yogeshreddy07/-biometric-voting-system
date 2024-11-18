@@ -1,0 +1,214 @@
+/* General styling for the page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 80px;
+    padding: 0px;
+    height: 100vh; /* Ensures the body takes up the full height of the viewport */
+    background-image: url('/static/images/vtgbg.jpg'); /* Path to your background image */
+    background-size: cover; /* Ensures the image covers the entire page */
+    background-position: center center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents image repetition */
+    background-attachment: fixed; /* Fixes the background image while scrolling */
+    display: flex;
+    flex-direction: column;
+}
+
+#vtrmain, #candidtls {
+    flex: 1; /* Ensures content sections take up the full available space */
+}
+
+/* #vtrmain - Position the Voter details at the top-left */
+#vtrmain {
+    position: relative;
+    padding-top: 20px;
+    background-color: rgba(112, 119, 129, 0.7); /* Transparent overlay to make text readable */
+    border-radius: 10px;
+}
+
+/* #vtrname - Styling for the Voter's name and details */
+#vtrname h1 {
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #000000; /* White text color */
+}
+
+#vtrname p {
+    font-size: 23px;
+    margin: 5px 0;
+    color: #000000; /* White text color */
+}
+
+/* Voter Image - Round image */
+#vtrname img {
+    border-radius: 0%;  /* Round shape */
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    padding-right: 30px;
+    padding-left: 50px;
+}
+
+/* Flexbox layout for Voter Image and Voter Details */
+#vtrname .row {
+    display: flex;
+    align-items: center;  /* Vertically center content */
+}
+
+/* Voter Image (first) and Details (beside) */
+#vtrimg {
+    display: flex;
+    justify-content: center;
+}
+
+#vtrdtls {
+    text-align: left;  /* Ensure text is left aligned */
+    padding-left: 20px;  /* Space between image and details */
+}
+
+/* Candidate Section (#candidtls) - Card Style */
+#candidtls {
+    margin-top: 40px;  /* Space between voter details and candidate section */
+    padding: 20px;
+    background-color: rgba(64, 71, 80, 0.8); /* Slight transparency for the card */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Card title */
+#candidtls h2 {
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #333333; /* Dark text color */
+}
+
+/* Candidate List - Flexbox layout */
+.candidate-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;  /* Align items to the left */
+    gap: 15px;  /* Space between candidate items */
+}
+
+/* Individual Candidate Item */
+.candidate-item {
+    text-align: center;
+    width: 22%;  /* Default width for large screens */
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out; /* Add hover effect */
+}
+
+.candidate-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.candidate-item h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.candidate-item .btn {
+    margin-top: 10px;
+}
+
+/* Button styling */
+button.btn {
+    padding: 8px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Button colors */
+button.btn-success {
+    background-color: #28a745;
+    color: white;
+}
+
+button.btn-success:hover {
+    background-color: #218838;
+}
+
+/* Candidate item hover effect */
+.candidate-item:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* View Details link */
+.view-details {
+    color: #007bff;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.view-details:hover {
+    text-decoration: underline;
+}
+
+/* Flash messages */
+ul {
+    padding: 0;
+    margin: 10px 0;
+    list-style-type: none;
+}
+
+ul li.success {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+ul li.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 992px) {
+    /* On tablets, adjust the candidate item width */
+    .candidate-item {
+        width: 45%;  /* 2 items per row */
+    }
+
+    /* On tablets, adjust Voter Image and Details */
+    #vtrname .row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #vtrimg {
+        margin-bottom: 15px;
+    }
+
+    #vtrdtls {
+        padding-left: 0; /* Remove padding on smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    /* On mobile, stack candidate items vertically */
+    .candidate-item {
+        width: 100%;  /* 1 item per row */
+    }
+
+    /* Voter details image and info stacking on small screens */
+    #vtrname img {
+        width: 80px;
+        height: 80px;
+    }
+
+    #vtrname h1 {
+        font-size: 20px;
+    }
+}

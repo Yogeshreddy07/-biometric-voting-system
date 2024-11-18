@@ -1,0 +1,85 @@
+/* General page styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: url("/static/images/OIP.jpeg") no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container to center content */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Face capture box styling */
+.face-capture-box {
+    text-align: center;
+    width: 300px;
+}
+
+/* Title styling */
+.face-capture-box h2 {
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Camera view box styling */
+.camera-view {
+    width: 100%;
+    height: 220px;
+    border: 2px solid #4CAF50; /* Green border similar to reference */
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e9ecef; /* Light gray background */
+}
+
+/* Face capture button styling */
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: #6c757d; /* Gray button color */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #5a6268; /* Darker gray on hover */
+}
+
+/* Flash message styling */
+ul {
+    list-style-type: none;
+    padding: 0;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+.success {
+    color: green;
+    font-weight: bold;
+}

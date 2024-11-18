@@ -1,0 +1,123 @@
+/* static/styles/admin.css */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #4CAF50; /* Green color for headings */
+    margin-top: 30px;
+}
+
+a {
+    color: #ffffff;
+    background-color: #007BFF; /* Bootstrap blue */
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+a:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+form {
+    background-color: #ffffff; /* White background for forms */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #333;
+}
+
+input[type="text"], input[type="file"], button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="text"]:focus {
+    border-color: #4CAF50; /* Change border color on focus */
+}
+
+button {
+    background-color: #4CAF50; /* Green button */
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+.success {
+    color: green;
+    font-weight: bold;
+}
+#admin {
+    background-color: #333333;
+    color: #f8f8f8;
+    padding: 20px; /* Optional: to add some space inside the container */
+}
+
+#admin h1, 
+#admin a {
+    color: #f8f8f8;
+}
+
+#viewresults a {
+    background-color: #555555; /* Optional: change the button background for contrast */
+    color: #f8f8f8;
+    border: none; /* Optional: remove the border */
+}
+#viewresults a {
+    background-color: #084aa4; /* Button background color */
+    color: #f8f8f8;            /* Font color */
+    border: none;               /* Optional: remove the button border */
+}
+
+#viewresults a:hover {
+    background-color: #06397b;  /* Optional: slightly darker color on hover */
+}
+#addvoter {
+    color: #000000; /* Font color for the entire Add Voter card */
+}
+
+#addvoter h2 {
+    color: #000000; /* Ensure the heading specifically has the desired font color */
+}
+#addcand {
+    color: #000000; /* Font color for the entire Add Voter card */
+}
+
+#addcand h2 {
+    color: #000000; /* Ensure the heading specifically has the desired font color */
+}

@@ -1,0 +1,49 @@
+/* static/styles/admin_results.css */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa; /* Light background for a clean look */
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #333; /* Dark text color for headings */
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+table {
+    width: 100%; /* Full width table */
+    border-collapse: collapse; /* Collapse borders */
+    margin: 20px 0; /* Space around the table */
+}
+
+thead {
+    background-color: #007BFF; /* Bootstrap blue for the header */
+    color: white; /* White text for the header */
+}
+
+th, td {
+    padding: 12px; /* Padding for table cells */
+    text-align: left; /* Align text to the left */
+    border: 1px solid #ddd; /* Light gray border */
+}
+
+tr:hover {
+    background-color: #f1f1f1; /* Light gray on row hover */
+}
+
+a {
+    display: inline-block; /* Make link a block element */
+    margin-top: 20px; /* Space above the link */
+    padding: 10px 15px; /* Padding for the link */
+    background-color: #28a745; /* Green color for the button */
+    color: white; /* White text color */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+a:hover {
+    background-color: #218838; /* Darker green on hover */
+}
